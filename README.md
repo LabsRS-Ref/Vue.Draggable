@@ -11,6 +11,134 @@
 * [Sortable 标准文档](https://github.com/SortableJS/Sortable)
 * [Sortable 示例代码](http://sortablejs.github.io/Sortable/)
 
+
+## Sortable 关键配置项
+
+* `group`: null, 用于分组，同一组的不同list可以相互拖动 【String/Array】
+* `sort`: true, 定义是否可以拖拽 【Boolean】
+* `disabled`: false, 定义是否此sortable对象是否可用 【Boolean】
+* `store`: null,
+* `handle`: null, 使列表单元中符合选择器的元素成为拖动的手柄，只有按住拖动手柄才能使列表单元进行拖动 【Selector】
+* `draggable`: /^[uo]l$/i.test(el.nodeName) ? '>li' : '>*',  指定元素内的哪些项目应该是可拖动的
+* `swapThreshold`: 1, // percentage; 0 <= x <= 1
+* `invertSwap`: false, // invert always
+* `invertedSwapThreshold`: null, // will be set to same as swapThreshold if default
+* `removeCloneOnHide`: true, 在不显示时删除克隆元素，而不是仅仅隐藏它
+* `direction`: function() {return _detectDirection(el, this.options);}, 方向
+* `ghostClass`: 'sortable-ghost', 当拖动列表单元时会生成一个副本作为影子单元来模拟被拖动单元排序的情况，此配置项就是来给这个影子单元添加一个class	【Selector】
+* `chosenClass`: 'sortable-chosen', 目标被选中时CSS Class 【Selector】
+* `dragClass`: 'sortable-drag', 目标拖动过程中时CSS Class 【Selector】
+* `ignore`: 'a, img',
+* `filter`: null, // 哪些元素不能拖拽 【String/Function】
+* `preventOnFilter`: true, 触发 `filter` 时调用 `event.preventDefault()`
+* `animation`: 0, 动画时间 单位:ms	【Number】
+* `easing·: null, 动画的缓和。默认为空。有关示例，请参见 https://easings.net/。
+* `setDaa`: function (dataTransfer, dragEl) { dataTransfer.setData('Text', dragEl.textContent);},
+* `dropBubble`: false,
+* `dragoverBubble`: false,
+* `dataIdAttr`: 'data-id', HTML attribute that is used by the `toArray()` method
+* `delay`: 0, 定义鼠标选中列表单元可以开始拖动的延迟时间 【Number】
+* `delayOnTouchOnly`: false, 只有在用户使用触摸时才会延迟
+* `touchStartThreshold`: (Number.parseInt ? Number : window).parseInt(window.devicePixelRatio, 10) || 1,
+* `forceFallback`: false, 如果设置为true时，将不使用原生的html5的拖放，可以修改一些拖放中元素的样式等 【Boolean】
+* `fallbackClass`: 'sortable-fallback', 当forceFallback设置为true时，拖放过程中鼠标附着单元的样式 【String】
+* `fallbackOnBody`: false,
+* `fallbackTolerance`: 0,
+* `fallbackOffset`: {x: 0, y: 0},
+* `supportPointer`: Sortable.supportPointer !== false && ('PointerEvent' in window) && !Safari,
+* `emptyInsertThreshold`: 5, 单位px，距离鼠标必须从空的可排序中插入拖动元素
+
+## Sortable 关键事件
+
+``` js
+
+setData: function (/** DataTransfer */dataTransfer, /** HTMLElement*/dragEl) {
+	dataTransfer.setData('Text', dragEl.textContent); // `dataTransfer` object of HTML5 DragEvent
+},
+
+// Element is chosen
+onChoose: function (/**Event*/evt) {
+	evt.oldIndex;  // element index within parent
+},
+
+// Element is unchosen
+onUnchoose: function(/**Event*/evt) {
+	// same properties as onEnd
+},
+
+// Element dragging started
+onStart: function (/**Event*/evt) {
+	evt.oldIndex;  // element index within parent
+},
+
+// Element dragging ended
+onEnd: function (/**Event*/evt) {
+	var itemEl = evt.item;  // dragged HTMLElement
+	evt.to;    // target list
+	evt.from;  // previous list
+	evt.oldIndex;  // element's old index within old parent
+	evt.newIndex;  // element's new index within new parent
+	evt.oldDraggableIndex; // element's old index within old parent, only counting draggable elements
+	evt.newDraggableIndex; // element's new index within new parent, only counting draggable elements
+	evt.clone // the clone element
+	evt.pullMode;  // when item is in another sortable: `"clone"` if cloning, `true` if moving
+},
+
+// Element is dropped into the list from another list
+onAdd: function (/**Event*/evt) {
+	// same properties as onEnd
+},
+
+// Changed sorting within list
+onUpdate: function (/**Event*/evt) {
+	// same properties as onEnd
+},
+
+// Called by any change to the list (add / update / remove)
+onSort: function (/**Event*/evt) {
+	// same properties as onEnd
+},
+
+// Element is removed from the list into another list
+onRemove: function (/**Event*/evt) {
+	// same properties as onEnd
+},
+
+// Attempt to drag a filtered element
+onFilter: function (/**Event*/evt) {
+	var itemEl = evt.item;  // HTMLElement receiving the `mousedown|tapstart` event.
+},
+
+// Event when you move an item in the list or between lists
+onMove: function (/**Event*/evt, /**Event*/originalEvent) {
+	// Example: https://jsbin.com/nawahef/edit?js,output
+	evt.dragged; // dragged HTMLElement
+	evt.draggedRect; // DOMRect {left, top, right, bottom}
+	evt.related; // HTMLElement on which have guided
+	evt.relatedRect; // DOMRect
+	evt.willInsertAfter; // Boolean that is true if Sortable will insert drag element after target by default
+	originalEvent.clientY; // mouse position
+	// return false; — for cancel
+	// return -1; — insert before target
+	// return 1; — insert after target
+	// return true; — keep default insertion point based on the direction
+	// return void; — keep default insertion point based on the direction
+},
+
+// Called when creating a clone of element
+onClone: function (/**Event*/evt) {
+	var origEl = evt.item;
+	var cloneEl = evt.clone;
+},
+
+// Called when dragging element changes position
+onChange: function(/**Event*/evt) {
+	evt.newIndex // most likely why this event is used is to get the dragging element's current index
+	// same properties as onEnd
+}
+
+```
+
 ---
 
 Vue component (Vue.js 2.0) or directive (Vue.js 1.0) allowing drag-and-drop and synchronization with view model array.
