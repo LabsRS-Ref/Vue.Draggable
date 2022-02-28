@@ -9,6 +9,7 @@
 
 * [HTML 拖放 Web API 标准文档](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API)
 * [Sortable 标准文档](https://github.com/SortableJS/Sortable)
+* [Sortable 示例代码](http://sortablejs.github.io/Sortable/)
 
 ---
 
