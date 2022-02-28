@@ -3,9 +3,16 @@
 
 [代码注释解析版本](https://replit.com/@lauer3912/VueDraggable)
 
+由于 Vue.Draggable 是基于 [`Sortable`](https://github.com/SortableJS/Sortable)
 
-* 参照：https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API
-* Vue component (Vue.js 2.0) or directive (Vue.js 1.0) allowing drag-and-drop and synchronization with view model array.
+因此，要先掌握一下内容：
+
+* [HTML 拖放 Web API 标准文档](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API)
+* [Sortable 标准文档](https://github.com/SortableJS/Sortable)
+
+---
+
+Vue component (Vue.js 2.0) or directive (Vue.js 1.0) allowing drag-and-drop and synchronization with view model array.
 
 Based on and offering all features of [Sortable.js](https://github.com/RubaXa/Sortable)
 
