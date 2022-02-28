@@ -105,17 +105,23 @@ const readonlyProperties = ["Move", ...eventsListened, ...eventsToEmit].map(
 );
 var draggingElement = null;
 
-// 可定制的Props
+// 属性
 const props = {
   /**
    配置选项：
    **/
   options: Object,
+  /**
+   * 效果同value的。和v-model不能共用
+   **/
   list: {
     type: Array,
     required: false,
     default: null
   },
+  /**
+   * value	用于实现拖拽的list，通常和内部v-for循环的数组为同一数组
+   **/
   value: {
     type: Array,
     required: false,

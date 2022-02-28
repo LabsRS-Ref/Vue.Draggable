@@ -1,7 +1,7 @@
 <p align="center"><img width="140"src="https://raw.githubusercontent.com/SortableJS/Vue.Draggable/master/logo.svg?sanitize=true"></p>
 <h1 align="center">Vue.Draggable</h1>
 
-[代码解析](https://replit.com/@lauer3912/VueDraggable)
+[代码注释解析版本](https://replit.com/@lauer3912/VueDraggable)
 
 
 * 参照：https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API
