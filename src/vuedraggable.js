@@ -105,7 +105,11 @@ const readonlyProperties = ["Move", ...eventsListened, ...eventsToEmit].map(
 );
 var draggingElement = null;
 
+// 可定制的Props
 const props = {
+  /**
+   配置选项：
+   **/
   options: Object,
   list: {
     type: Array,
@@ -149,6 +153,7 @@ const props = {
 const draggableComponent = {
   name: "draggable",
 
+  // $attrs 属性不要在dom元素上显示
   inheritAttrs: false,
 
   props,

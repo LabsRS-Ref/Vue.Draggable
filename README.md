@@ -1,17 +1,11 @@
 <p align="center"><img width="140"src="https://raw.githubusercontent.com/SortableJS/Vue.Draggable/master/logo.svg?sanitize=true"></p>
 <h1 align="center">Vue.Draggable</h1>
 
-[![CircleCI](https://circleci.com/gh/SortableJS/Vue.Draggable.svg?style=shield)](https://circleci.com/gh/SortableJS/Vue.Draggable)
-[![Coverage](https://codecov.io/gh/SortableJS/Vue.Draggable/branch/master/graph/badge.svg)](https://codecov.io/gh/SortableJS/Vue.Draggable)
-[![codebeat badge](https://codebeat.co/badges/7a6c27c8-2d0b-47b9-af55-c2eea966e713)](https://codebeat.co/projects/github-com-sortablejs-vue-draggable-master)
-[![GitHub open issues](https://img.shields.io/github/issues/SortableJS/Vue.Draggable.svg)](https://github.com/SortableJS/Vue.Draggable/issues?q=is%3Aopen+is%3Aissue)
-[![npm download](https://img.shields.io/npm/dt/vuedraggable.svg)](https://www.npmjs.com/package/vuedraggable)
-[![npm download per month](https://img.shields.io/npm/dm/vuedraggable.svg)](https://www.npmjs.com/package/vuedraggable)
-[![npm version](https://img.shields.io/npm/v/vuedraggable.svg)](https://www.npmjs.com/package/vuedraggable)
-[![MIT License](https://img.shields.io/github/license/SortableJS/Vue.Draggable.svg)](https://github.com/SortableJS/Vue.Draggable/blob/master/LICENSE)
+[代码解析](https://replit.com/@lauer3912/VueDraggable)
 
 
-Vue component (Vue.js 2.0) or directive (Vue.js 1.0) allowing drag-and-drop and synchronization with view model array.
+* 参照：https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Drag_and_Drop_API
+* Vue component (Vue.js 2.0) or directive (Vue.js 1.0) allowing drag-and-drop and synchronization with view model array.
 
 Based on and offering all features of [Sortable.js](https://github.com/RubaXa/Sortable)
 
@@ -49,7 +43,7 @@ https://david-desmaisons.github.io/draggable-example/
  <img style="margin-top: 10px;" src="https://flatlogic.com/assets/logo-b6ca6492a82bd9eddf58c40710235855b1c502097c23faae6306cd36973aaea8.svg">
  </a>
 
-Admin Dashboard Templates made with Vue, React and Angular.
+Admin Dashboard Templates made with Vue, React, and Angular.
 
 
 ## Donate
